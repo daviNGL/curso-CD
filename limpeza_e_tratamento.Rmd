@@ -73,4 +73,42 @@ hist(dados$Score, xlab = "Score", main = "Score clientes")
 ```
 
 
+```{r}
+
+# IDADE
+
+summary(dados$Idade)
+
+boxplot(dados$Idade)
+
+hist(dados$Idade)
+
+```
+
+
+
+```{r}
+
+# SALDO
+
+summary(dados$Saldo)
+
+boxplot(dados$Saldo)
+
+hist(dados$Saldo)
+
+```
+
+
+```{r}
+
+# SALARIO
+
+summary(dados$Salario)
+
+boxplot(dados$Salario)
+
+hist(dados$Salario)
+
+```
 
