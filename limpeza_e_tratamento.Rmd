@@ -18,3 +18,20 @@ summary(dados)
 
 ```
 
+
+# DAR NOMES PARA AS COLUNAS
+
+```{r}
+
+nomesColunas <- c("Id", "Score", "Estado", "Genero", "Idade", "Patrimonio", 
+                  "Saldo", "Produtos", "TemCartaoCredito", "Ativo", "Salario", "Saiu")
+
+colnames(dados) <- nomesColunas
+
+
+head(dados)
+
+
+```
+
+
