@@ -32,3 +32,15 @@ iristeste
 
 ```
 
+VETOR E GRAFICO BASICO
+```{r}
+
+x <- c(10, 20, 30, 40, 50)
+y <- c(1, 2, 3, 4, 5)
+
+plot(x = x, y = y)
+
+
+```
+
+
