@@ -1,0 +1,16 @@
+
+# IMPORTACAO ARQUIVO
+
+```{r}
+
+
+setwd("D:\\Documentos\\Cursos\\FormacaoCD")
+
+
+# STRING VAZIO COMO N/A E STRING COMO FATOR
+
+dados <- read.csv(file = "Churn.csv", sep = ";", header = TRUE)
+
+
+```
+
