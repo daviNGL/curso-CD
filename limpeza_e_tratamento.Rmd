@@ -150,3 +150,29 @@ dados[!complete.cases(dados$Salario), ]
 ```
 
 
+
+# FALTA DE PADROZINACAO NO GENERO
+
+```{r}
+
+
+# ver os dados (tipo um selec distinct)
+
+#unique(dados$Genero)
+#summary(dados$Genero)
+
+
+dados[dados$Genero == "M" | is.na(dados$Genero), 'Genero'] <- "Masculino"
+dados[dados$Genero == "F" | dados$Genero == "Fem", 'Genero'] <- "Feminino"
+
+summary(dados$Genero)
+#summary(bkp$Genero)
+
+# REMOVER FATORES ZERADOS/NAO UTILIZADOS
+dados$Genero <- factor(dados$Genero)
+
+summary(dados$Genero)
+
+```
+
+
