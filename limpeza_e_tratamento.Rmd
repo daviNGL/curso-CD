@@ -126,3 +126,27 @@ dados[!complete.cases(dados), ]
 ```
 
 
+# SALARIOS
+```{r}
+
+bkp <- dados
+
+# TRATAR SALARIOS
+summary(dados$Salario)
+
+# CALCULO DA MEDIANA DOS SALARIOS
+mediana_salarios <- median(x = dados$Salario, na.rm = TRUE)
+
+# ATRIBUIR VALOR DA MEDIANA AOS VALORES NA
+dados[is.na(dados$Salario),]$Salario <- mediana_salarios
+#ou
+dados[is.na(x = dados$Salario),'Salario'] <- mediana_salarios
+
+
+dados[!complete.cases(dados$Salario), ]
+
+
+
+```
+
+
