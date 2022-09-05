@@ -1,0 +1,11 @@
+
+Diretório de trabalho
+
+```{r}
+
+getwd()
+
+setwd("D:/Documentos/Cursos/FormacaoCD")
+
+```
+
