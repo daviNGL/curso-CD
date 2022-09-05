@@ -9,7 +9,11 @@ setwd("D:\\Documentos\\Cursos\\FormacaoCD")
 
 # STRING VAZIO COMO N/A E STRING COMO FATOR
 
-dados <- read.csv(file = "Churn.csv", sep = ";", header = TRUE)
+dados <- read.csv(file = "Churn.csv", sep = ";", na.strings = "", stringsAsFactors = T)
+
+head(dados)
+
+summary(dados)
 
 
 ```
