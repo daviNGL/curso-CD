@@ -176,3 +176,25 @@ summary(dados$Genero)
 ```
 
 
+# IDADES FORA DO DOMINIOS
+
+
+```{r}
+
+bkp <- dados
+
+# VER AS IDADES FORA DO DOMINIO
+dados[dados$Idade<0 | dados$Idade>110,]
+
+#ASSUMIR VALOR DA MEDIANA PAPARA ESTAS IDADES
+dados[dados$Idade<0 | dados$Idade>110,'Idade'] <- median(x = dados$Idade)
+
+# VER SE AINDA TEM IDADES FORA DO DOMINIO
+dados[dados$Idade<0 | dados$Idade>110,]
+
+summary(dados$Idade)
+
+```
+
+
+
