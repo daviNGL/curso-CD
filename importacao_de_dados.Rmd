@@ -1,0 +1,40 @@
+
+# IMPORTAR PLANILHAS OD EXCEL
+```{r}
+
+install.packages("xlsx")
+
+library(xlsx)
+
+```
+
+
+# IMPORTAR ARQUIVOS TEXTO
+
+```{r}
+
+
+library(readr)
+
+arqtest <- read_delim(file.choose(), delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+arq_test <- read.csv(file = file.choose(), header = T, sep = ";")
+
+View(arq_test)
+
+
+```
+
+
+# IMPORTAR EXCEL
+
+```{r}
+
+library(readxl)
+teste_planilha <- read_excel("D:/Documentos/Cursos/FormacaoCD/teste_planilha.xlsx")
+View(teste_planilha)
+
+
+```
+
+
