@@ -9,3 +9,19 @@ setwd("D:/Documentos/Cursos/FormacaoCD")
 
 ```
 
+Salvar um objeto
+
+```{r}
+
+# COPIAR O OBJETO
+iristeste <- iris
+
+# SALVANDO NA PASTA DO PROJETO
+save(... = iristeste, file = "irisdavi.Rdata")
+
+# REMOVER O OBJETO DA MEMORIA
+rm(iristeste)
+
+
+```
+
