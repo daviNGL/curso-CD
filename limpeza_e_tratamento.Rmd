@@ -58,6 +58,19 @@ barplot(count_genero, main = "Genero")
 
 ```
 
+# EXPLORACAO DADOS NUMERICOS
+
+```{r}
+
+# SCORE
+
+summary(dados$Score)
+
+boxplot(dados$Score)
+
+hist(dados$Score, xlab = "Score", main = "Score clientes")
+
+```
 
 
 
