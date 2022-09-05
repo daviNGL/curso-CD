@@ -112,3 +112,17 @@ hist(dados$Salario)
 
 ```
 
+
+# VALORES FALTANTES N/A
+```{r}
+
+
+# FUNCAO COMPLETE.CASE SELECIONA OS DADOS QUE ESTAO PREENCHIDOS
+
+# PEGANDO OS VALORES FALTANTES]
+dados[!complete.cases(dados), ]
+
+
+```
+
+
