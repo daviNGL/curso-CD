@@ -1,6 +1,5 @@
 
-Diretório de trabalho
-
+DIRETORIO DE TRABALHO
 ```{r}
 
 getwd()
@@ -9,8 +8,7 @@ setwd("D:/Documentos/Cursos/FormacaoCD")
 
 ```
 
-Salvar um objeto
-
+SALVAR UM OBJETO
 ```{r}
 
 # COPIAR O OBJETO
@@ -22,6 +20,15 @@ save(... = iristeste, file = "irisdavi.Rdata")
 # REMOVER O OBJETO DA MEMORIA
 rm(iristeste)
 
+
+```
+
+
+CARREGAR O OBJETO NOVAMENTE
+```{r}
+
+load(file = "irisdavi.Rdata")
+iristeste
 
 ```
 
