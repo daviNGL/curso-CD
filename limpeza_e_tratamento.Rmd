@@ -35,3 +35,29 @@ head(dados)
 ```
 
 
+
+# EXPLORAR DADOS - COLUNAS CATEGORICAS
+
+```{r}
+
+# ESTADOS
+#table(dados$Estado) #cria uma tabela, contabiliza quantas repeticoes tem pra cada item
+
+contagemEstados <- table(dados$Estado)
+
+#BARPLOT: PLOT DE BARRAS?
+barplot(contagemEstados, main = "Estados")
+
+
+
+#=== GENERO ===#
+count_genero <- table(dados$Genero)
+
+barplot(count_genero, main = "Genero")
+
+
+```
+
+
+
+
