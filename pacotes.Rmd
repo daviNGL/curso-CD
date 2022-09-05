@@ -1,0 +1,12 @@
+
+INSTALAR UM PACOTE
+```{r}
+
+# SO PRECISA NA PRIMEIRA VEZ
+install.packages("e1071")
+
+# PRECISA TODAS AS VEZES QUE FOR CARREGAR NA MEMORIA
+library(e1071)
+
+```
+
