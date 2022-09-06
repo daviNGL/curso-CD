@@ -197,4 +197,27 @@ summary(dados$Idade)
 ```
 
 
+# DADOS DUPLICADOS
+
+```{r}
+
+bkp <- dados
+
+# BUSCANDO SE TEM DADOS DUPLICADOS
+dados[duplicated(dados$Id), ]
+
+
+#REMOVENDO AS LINHAS QUE ESTAO DUPLICADAS
+dados <- dados[-c(82),]
+
+#ou
+
+dados <- dados[!duplicated(dados$Id), ]
+
+dados[duplicated(dados$Id), ]
+
+
+```
+
+
 
