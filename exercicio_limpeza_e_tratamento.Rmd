@@ -1,0 +1,15 @@
+
+# CARREGANDO A BASE
+```{r}
+
+base_tempo <- read.csv(file = "tempo.csv", 
+                       header = TRUE, 
+                       sep = ";",
+                       na.strings = "")
+
+head(x = base_tempo)
+
+names(base_tempo)
+
+```
+
