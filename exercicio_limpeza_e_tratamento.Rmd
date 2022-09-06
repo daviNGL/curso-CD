@@ -13,3 +13,42 @@ names(base_tempo)
 
 ```
 
+# EXPLORACAO DOS DADOS
+```{r}
+
+bpk <- base_tempo
+
+summary(base_tempo)
+
+```
+
+#TRATAMENTO E LIMPEZA DOS DADOS
+
+```{r}
+
+#=== APARENCIA ===#
+
+bpk <- base_tempo
+
+base_tempo$Aparencia
+
+summary(base_tempo$Aparencia)
+
+
+# TRANSFORMA EM FATOR
+base_tempo$Aparencia <- factor(base_tempo$Aparencia)
+
+
+# DOMINIOS ERRADOS TROCADOS PARA A MODA
+base_tempo[!(base_tempo$Aparencia %in% c("chuva", "sol", "nublado")),'Aparencia'] <- "sol"
+
+summary(base_tempo$Aparencia)
+
+
+# REMOVENDO FATORES ZERADOS
+base_tempo$Aparencia <- factor(base_tempo$Aparencia)
+summary(base_tempo$Aparencia)
+
+```
+
+
