@@ -52,3 +52,23 @@ summary(base_tempo$Aparencia)
 ```
 
 
+
+```{r}
+
+#=== TEMPERATURA ===#
+
+bpk <- base_tempo
+
+summary(base_tempo$Temperatura)
+
+boxplot(base_tempo$Temperatura)
+boxplot(base_tempo$Temperatura, outline = FALSE)
+
+valores_fdp <- boxplot(base_tempo$Temperatura)$out
+
+# ATUALIZANDO OUTLINE PRA MEDIANA
+base_tempo[base_tempo$Temperatura %in% valores_fdp,'Temperatura'] <- median(base_tempo$Temperatura, na.rm = TRUE)
+
+```
+
+
