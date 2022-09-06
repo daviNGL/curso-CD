@@ -241,3 +241,36 @@ dados$Estado <- factor(dados$Estado)
 
 
 
+# TRATAMENTO VALORES FORA DO PADRAO
+```{r}
+
+bkp <- dados
+
+# CALCULO DO DESVIO PADRAO
+
+desv <- sd(x = dados$Salario, na.rm = TRUE)
+
+
+# VERIFICA SE HA SALARIOS FORA DE 2 DESVIO PADRAO
+
+dados[dados$Salario >= (2*desv), ]
+
+#ou
+
+# VISUALIZA O BOXPLOT
+boxplot(dados$Salario)
+
+#VISUALIZA SEM OS OUTLINERS
+boxplot(x = dados$Salario, outline = FALSE)
+
+#PEGAR APENAS OS OUTLINES
+x <- boxplot(x = dados$Salario)$out
+x
+
+
+dados[dados$Salario >= (desv*2), 'Salario'] <- median(x = dados$Salario, na.rm = T) 
+
+dados[dados$Salario >= (2*desv), ]
+
+```
+
