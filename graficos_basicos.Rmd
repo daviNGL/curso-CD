@@ -1,0 +1,25 @@
+
+
+# HISTOGRAMA
+```{r}
+
+# BOM PRA ANALISAR UMA VARIAVEL NUMERICA CONTINUA DE CADA VEZ
+
+df_arvores <- trees
+
+head(df_arvores)
+
+colnames(df_arvores) <- c("Circunferencia", "Altura", "Volume")
+
+head(df_arvores)
+
+
+# MOSTRA A FREQUENCIA DE DETERMINADO RANGE
+hist(df_arvores$Altura)
+
+
+hist(x = df_arvores$Altura, main = "Árvores")
+
+
+```
+
