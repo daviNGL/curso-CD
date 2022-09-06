@@ -72,3 +72,26 @@ base_tempo[base_tempo$Temperatura %in% valores_fdp,'Temperatura'] <- median(base
 ```
 
 
+```{r}
+
+#=== UMIDADE ===#
+
+bpk <- base_tempo
+
+summary(base_tempo$Umidade)
+
+boxplot(base_tempo$Umidade)
+
+# VALORES N/A SUBSTITUIDOS PELA MEDIANA:
+base_tempo[is.na(base_tempo$Umidade), 'Umidade'] <- median(x = base_tempo$Umidade, na.rm = TRUE)
+
+# VALORES FORA DO INTERVALO SUBTUIDOS PELA MEDIANA
+base_tempo[(base_tempo$Umidade<0 | base_tempo$Umidade>100), 'Umidade'] <- median(x = base_tempo$Umidade, na.rm = TRUE)
+
+summary(base_tempo$Umidade)
+
+boxplot(base_tempo$Umidade)
+
+```
+
+
