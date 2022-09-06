@@ -219,5 +219,25 @@ dados[duplicated(dados$Id), ]
 
 ```
 
+# ESTADOS QUE NÃO EXISTEM / FORA DO DOMINIO
+
+```{r}
+
+bkp <- dados
+dados <- bkp
+
+summary(dados$Estado)
+
+head(dados)
+
+dados[!(dados$Estado %in% c('RS', 'SC', 'PR')),'Estado'] <- "RS"
+
+
+# REMOVER FATORES ZERADOS
+dados$Estado <- factor(dados$Estado)
+
+
+```
+
 
 
