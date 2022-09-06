@@ -44,9 +44,46 @@ hist(x = df_arvores$Altura, main = NULL, xlab = NULL, ylab = NULL)
 # INFORMO QUE A PROX INSTRUCAO DEVE SER SOBREPOSTA NO GRAFICO DA INSTRUCAO ANTERIOR
 par(new = TRUE)
 
-plot(densidade, main = "Árvores")
+plot(densidade, main = "Árvores", xlab = "Altura")
 
 
 ```
 
+
+# GRAFICO DE DISPERSAO
+```{r}
+
+# UTILIZADO PRA COMPARAR VARIAVEIS CONTINUAS
+
+plot(x = df_arvores$Circunferencia, y = df_arvores$Volume)
+
+
+plot(x = df_arvores$Circunferencia, y = df_arvores$Volume,
+     main = "Árvores",
+     xlab = "Circunferencia", ylab = "Volume",
+     col = "blue")
+
+
+#PCH = MUDA O ELEMENTO GRAFICO
+
+plot(x = df_arvores$Circunferencia, y = df_arvores$Volume,
+     main = "Árvores",
+     xlab = "Circunferencia", ylab = "Volume",
+     col = "blue",
+     pch = 20)
+
+```
+
+
+# MUDANDO O GRAFICO 
+```{r}
+
+plot(x = df_arvores$Circunferencia, y = df_arvores$Volume,
+     main = "Árvores",
+     xlab = "Circunferencia", ylab = "Volume",
+     col = "blue",
+     pch = 20,
+     type = "l")
+
+```
 
