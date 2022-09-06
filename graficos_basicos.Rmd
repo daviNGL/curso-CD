@@ -17,9 +17,36 @@ head(df_arvores)
 # MOSTRA A FREQUENCIA DE DETERMINADO RANGE
 hist(df_arvores$Altura)
 
-
 hist(x = df_arvores$Altura, main = "Árvores")
+
+hist(x = df_arvores$Altura, main = "Árvores", xlab = "Altura", ylab = "Frequência")
+
+hist(x = df_arvores$Altura, main = "Árvores", xlab = "Altura", ylab = "Frequência",
+     col = "blue", density = 20, breaks = 20)
+
+```
+
+
+# GERANDO O GRAFICO ACIMA ATRAVES DE DENSIDADE
+```{r}
+
+densidade <- density(df_arvores$Altura)
+
+plot(x = densidade)
+
+```
+
+# DENSIDADE SOB O HISTOGRAMA
+```{r}
+
+hist(x = df_arvores$Altura, main = NULL, xlab = NULL, ylab = NULL)
+
+# INFORMO QUE A PROX INSTRUCAO DEVE SER SOBREPOSTA NO GRAFICO DA INSTRUCAO ANTERIOR
+par(new = TRUE)
+
+plot(densidade, main = "Árvores")
 
 
 ```
+
 
