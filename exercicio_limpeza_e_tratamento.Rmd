@@ -94,4 +94,24 @@ boxplot(base_tempo$Umidade)
 
 ```
 
+```{r}
+
+# CAMPOS JOGAR E VENTO
+
+
+# TRANSFORMANDO EM FATORES
+base_tempo$Vento <- factor(base_tempo$Vento)
+base_tempo$Jogar <- factor(base_tempo$Jogar)
+
+summary(base_tempo$Vento) #PRECISA TRATAR OS NA
+summary(base_tempo$Jogar) #NAO TEM O QUE TRATAR
+
+
+base_tempo[is.na(base_tempo$Vento),'Vento'] <- "FALSO"
+
+
+head(base_tempo)
+
+```
+
 
