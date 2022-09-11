@@ -86,3 +86,18 @@ plot(x = df_arvores$Circunferencia, y = df_arvores$Volume,
      type = "l")
 
 ```
+
+# LEGENDA COM DIMENSAO CATEGORICA
+```{r}
+
+CO2
+
+plot(x = CO2$conc,
+     y = CO2$uptake,
+     col = CO2$Treatment)
+legend("bottomright", legend = c("nonchilled", "chilled"), cex=1, fill = c("black", "red"))
+
+
+
+```
+
