@@ -9,3 +9,43 @@ library(stargazer)
 
 ```
 
+# FORMATO LATEX
+```{r}
+
+stargazer(iris)
+
+```
+
+# HTML
+```{r}
+
+stargazer(... = iris,
+          type = "html")
+
+```
+
+
+# TEXTO
+```{r}
+
+stargazer(iris,
+          type = "text")
+```
+
+
+# SALVAR EM DISCO
+```{r}
+
+women
+
+stargazer(women,
+          out = "women.txt",
+          summary = FALSE)
+
+stargazer(women,
+          out = "women2.txt",
+          summary = TRUE)
+
+```
+
+
