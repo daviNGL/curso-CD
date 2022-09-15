@@ -1,0 +1,136 @@
+
+# IMPORTACAO DO ARQUIVO
+```{r}
+
+library(readr)
+
+
+dados <- read.csv(file = "D:/Documentos/Cursos/FormacaoCD/dados.csv",
+                  header = TRUE,
+                  sep = ";",
+                  na.strings = c("", " ", NA))
+
+View(dados)
+
+```
+
+
+# EXPLORANDO AS COLUNAS
+```{r}
+
+library(lattice)
+
+head(dados)
+
+
+
+```
+
+
+# COLUNA CODIGO
+```{r}
+
+
+summary(dados$CODIGO)
+bwplot(x = dados$CODIGO)
+
+# VERIFICA SE TEM VALOR DUPLICADO
+repetidos <- dados[!unique(dados$CODIGO), ] #nenhum repetido
+
+
+```
+
+
+# COLUNA MUNICIPIO
+```{r}
+
+summary(dados$MUNICIPIO)
+
+dados[is.na(dados$MUNICIPIO), ]
+
+#OK
+
+```
+
+# COLUNA PIB
+```{r}
+
+summary(dados$PIB)
+
+
+# VERIFICAR NA's
+dados[is.na(dados$PIB), ]
+
+# VERIFICAR OUTLIERS
+bwplot(x = dados$PIB)
+
+boxplot(x = dados$PIB,
+        horizontal = TRUE,
+        outline = FALSE)
+
+```
+
+
+
+# COLUNA VALOR EMPENHO
+```{r}
+
+summary(dados$VALOREMPENHO)
+
+
+# VERIFICAR NA's
+dados[is.na(dados$VALOREMPENHO), ]
+
+# VERIFICAR OUTLIERS
+bwplot(x = dados$VALOREMPENHO)
+
+boxplot(x = dados$VALOREMPENHO,
+        horizontal = TRUE,
+        outline = FALSE)
+
+
+```
+
+
+# GRAFICOS PARA ANALISE
+```{r}
+
+
+
+
+# REMOVE OUTLIERS
+out_pib <- boxplot(x = dados$PIB, plot = FALSE)$out
+out_emp <- boxplot(x = dados$VALOREMPENHO, plot = FALSE)$out
+
+dados_remover1 <- dados[(dados$PIB %in% out_pib),]$CODIGO
+dados_remover2 <- dados[dados$VALOREMPENHO %in% out_emp,]$CODIGO
+
+dados_ <- dados[!dados$CODIGO %in% c(dados_remover1, dados_remover2),]
+
+boxplot(dados$PIB)
+boxplot(dados_$PIB)
+
+boxplot(dados$VALOREMPENHO)
+boxplot(dados_$VALOREMPENHO)
+
+
+
+# PIB X DESEMPENHO
+
+plot(x = dados_$PIB,
+     y= dados_$VALOREMPENHO,
+     xlab = "PIB",
+     ylab = "VALOR EMPENHO")
+
+
+xyplot(x = dados_$VALOREMPENHO ~ dados_$PIB,
+       xlab = "PIB",
+       ylab = "VALOR EMPENHO")
+
+
+
+```
+
+
+
+
