@@ -51,7 +51,20 @@ InsectSprays
 # SOMA TODAS AS VARIAVEIS DA COLUNA X, AGRUPANDO PELA COLUA Y
 spray <- aggregate(. ~ spray, data = InsectSprays, sum)
 
+
+
+# TESTANDO OUTRO MODO DE AGREGAR
+testeAggregate <- aggregate(x = InsectSprays$count,
+                            by = list(InsectSprays$spray),
+                            FUN = sum)
+
 spray
+testeAggregate
+
+
+names(testeAggregate) <- c("Spray", "Count")
+testeAggregate
+
 
 ```
 

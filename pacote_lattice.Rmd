@@ -41,4 +41,103 @@ histogram(x = trees$Volume,
 
 
 # HISTOGRAMA CONDICIONAL
+```{r}
+
+chickwts
+
+hist(x = chickwts$weight)
+
+histogram(x = chickwts$weight)
+
+
+```
+
+
+
+
+```{r}
+
+chickwts
+
+
+
+teste <- aggregate(x = chickwts$weight, 
+                   by = list(chickwts$feed),
+                   FUN = sum)
+
+names(teste) <- c("Alimentacao", "Peso")
+
+teste
+
+
+histogram(x = ~weight | feed,
+          data = chickwts)
+
+
+```
+
+
+# GRAFICOS DE DISPERCAO CONDICIONAL
+
+```{r}
+
+CO2
+
+plot(x = CO2$uptake,
+     y = CO2$conc)
+
+xyplot(x = CO2$conc ~ CO2$uptake)
+
+xyplot(x = CO2$conc ~ CO2$uptake | CO2$Type)
+
+xyplot(x = CO2$conc ~ CO2$uptake | CO2$Treatment)
+```
+
+
+# CANCER DE ESOFAGO
+```{r}
+
+esoph
+
+names(esoph)
+
+esofago <- esoph
+
+names(esofago) <- c("idade", "alcool", "tabaco", "num_casos", "grupo_controle")
+
+esofago
+
+
+dotplot(x = esofago$alcool ~ esofago$grupo_controle,
+        data = esofago)
+
+
+dotplot(x = esofago$alcool ~ esofago$grupo_controle | esofago$tabaco)
+```
+
+
+# DENSIDADE
+
+```{r}
+
+CO2
+
+densityplot(x = CO2$conc)
+
+densityplot(x = CO2$conc,
+            plot.point = FALSE)
+
+densityplot(x = ~CO2$conc,
+            plot.point = FALSE)
+
+
+densityplot(x = ~CO2$conc | CO2$Type,
+            plot.point = FALSE)
+
+densityplot(x = ~CO2$conc | CO2$Treatment,
+            plot.point = FALSE)
+
+
+```
+
 
