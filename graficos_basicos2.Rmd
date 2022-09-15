@@ -1,0 +1,26 @@
+
+# BLOXPLOT
+```{r}
+
+boxplot(trees$Volume,
+        main = "Árvores",
+        xlab = "Volume")
+
+
+boxplot(trees$Volume,
+        main = "Árvores",
+        xlab = "Volume",
+        #col = "blue",
+        horizontal = TRUE)
+
+boxplot(trees$Volume,
+        main = "Árvores",
+        xlab = "Volume",
+        #col = "blue",
+        horizontal = TRUE,
+        outline = FALSE)
+
+
+```
+
+
