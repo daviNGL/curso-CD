@@ -1,0 +1,11 @@
+
+# INSTALACAO E CARREGAMENTO PACOTE PARA TRABALHAR COM TABELAS
+
+```{r}
+
+#install.packages("stargazer")
+
+library(stargazer)
+
+```
+
