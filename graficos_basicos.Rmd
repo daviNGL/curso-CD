@@ -101,3 +101,31 @@ legend("bottomright", legend = c("nonchilled", "chilled"), cex=1, fill = c("blac
 
 ```
 
+# DIVISAO DE TELA -SPLIT-
+```{r}
+
+#plot(trees)
+
+# INFORMO QUE VOU DIVIDIR MINHA ELA EM 4 POSICOES
+split.screen(figs = c(2,2))
+
+# VOU ACESSANDO OS LOCAIS QUE QUERO IMPRIMIR:
+
+screen(1)
+plot(trees$Girth, trees$Volume)
+
+screen(2)
+plot(trees$Girth, trees$Height)
+
+screen(3)
+plot(trees$Height, trees$Volume)
+
+screen(4)
+hist(trees$Volume)
+
+
+# FECHO AS TELAS P VOLTAR A IMPRESSAO NORMAL
+close.screen()
+
+```
+
