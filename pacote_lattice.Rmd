@@ -1,0 +1,44 @@
+
+
+# CARREGANDO O PACOTE
+```{r}
+
+library(lattice)
+
+```
+
+
+
+# BOXPLOT
+```{r}
+
+trees
+
+bwplot(x = trees$Volume)
+
+bwplot(x = trees$Volume,
+       main = "Arvores",
+       xlab = "Volume")
+
+```
+
+
+
+# HISTOGRAMA
+```{r}
+
+#type = percent, count, density
+
+
+histogram(x = trees$Volume,
+          xlab = "Volume",
+          ylab = "Frequencia",
+          nint = 10,
+          type = "count")
+
+```
+
+
+
+# HISTOGRAMA CONDICIONAL
+
