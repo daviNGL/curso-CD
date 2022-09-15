@@ -44,3 +44,16 @@ boxplot(trees)
 ```
 
 
+```{r}
+
+InsectSprays
+
+# SOMA TODAS AS VARIAVEIS DA COLUNA X, AGRUPANDO PELA COLUA Y
+spray <- aggregate(. ~ spray, data = InsectSprays, sum)
+
+spray
+
+```
+
+
+
