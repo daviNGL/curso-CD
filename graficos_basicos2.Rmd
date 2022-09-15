@@ -67,4 +67,25 @@ box()
 
 ```
 
+# GRAFICO DE PIZZA
+```{r}
+
+pie(x = spray$count)
+
+pie(x = spray$count,
+    labels = spray$spray)
+
+pie(x = spray$count,
+    labels = spray$spray,
+    main = "Spray",
+    col = c(1:6))
+
+pie(x = spray$count,
+    labels = NA,
+    col = c(1:nrow(spray)))
+legend(x = "bottomleft", legend = spray$spray, fill = c(1:nrow(spray)))
+
+
+
+```
 
