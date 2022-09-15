@@ -55,5 +55,16 @@ spray
 
 ```
 
+# GRAFICO DE BARRAS
+```{r}
+
+barplot(height = spray$count, 
+        names.arg = spray$spray,
+        xlab = "Spray",
+        ylab = "Total",
+        col = gray.colors(5))
+box()
+
+```
 
 
