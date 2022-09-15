@@ -24,3 +24,23 @@ boxplot(trees$Volume,
 ```
 
 
+
+# INFORMACOES DO BOXPLOT
+```{r}
+
+boxplot.stats(trees$Volume)
+
+boxplot.stats(trees$Volume)$stats
+
+```
+
+
+# BOXPLOT COM MAIS DE UMA VARIAVEL NUMERICA
+```{r}
+
+# EH SO CHAMAR COM UMA VARIAVEL QUE TENHA MAIS DE UMA COLUNA, TIPO UM DATA FRAME
+boxplot(trees)
+
+```
+
+
