@@ -26,3 +26,13 @@ qqline(y = x,
 
 ```
 
+# TESTE DE SHAPIRO
+```{r}
+
+# HIPOTESE NULA: EH NORMALIZADO
+# P < 0.05 REJEITO A HIP. NULA
+
+shapiro.test(x)
+
+```
+
