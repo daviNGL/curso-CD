@@ -33,7 +33,11 @@ summary(as.factor(amostra))
 #150 AMOSTRAS, DE 1 A 1000 SEM REPOSICAO E PROB. EQUIVALENTES
 ```{r}
 
+amostra <- sample(x = c(1:1000),
+                  size = 150,
+                  replace = FALSE)
 
+amostra
 
 ```
 
