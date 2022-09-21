@@ -1,0 +1,39 @@
+
+# 150 AMOSTRAS, DE 0 E 1, COM REPOSIÇÃO, PROB. EQUIVALENTES
+```{r}
+
+amostra <- sample(x = c(0,1),
+                  size = 150,
+                  replace = TRUE,
+                  prob = c(0.5, 0.5))
+
+amostra
+
+summary(as.factor(amostra))
+
+```
+
+# 150 AMOSTRAS, DE 0 E 1, COM REPOSIÇÃO, + CHANCES PRO ZERO
+```{r}
+
+amostra <- sample(x = c(0,1),
+                  size = 150,
+                  replace = TRUE,
+                  prob = c(0.8,0.2))
+
+amostra
+
+
+summary(as.factor(amostra))
+
+
+```
+
+
+#150 AMOSTRAS, DE 1 A 1000 SEM REPOSICAO E PROB. EQUIVALENTES
+```{r}
+
+
+
+```
+
