@@ -1,0 +1,45 @@
+
+# PACOTES NECESSARIOS
+```{r}
+
+install.packages("sampling")
+library(sampling)
+
+```
+
+
+# PROPORCAO
+```{r}
+
+proporcao = 25
+
+```
+
+
+
+# GERANDO AMOSTRAGEM DE IRIS, ESTRATIFICADA POR ESPECIE
+```{r}
+
+head(iris)
+
+amostra_iris <- strata(data = iris,
+                       stratanames = c("Species"),
+                       size = c(proporcao, proporcao, proporcao),
+                       method = "srswor")
+
+```
+
+
+
+# ANALISE RESULTADO
+
+```{r}
+
+summary(amostra_iris)
+
+```
+
+
+
+
+
