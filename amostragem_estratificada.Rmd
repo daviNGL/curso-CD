@@ -41,5 +41,34 @@ summary(amostra_iris)
 
 
 
+# DADOS DE INFERTILIDADE
+```{r}
 
+infert
+
+summary(infert)
+
+```
+
+
+# AMOSTRAGEM ESTRATIFICADA DO CONJUNTO INFERT
+```{r}
+
+
+
+prop1 <- nrow(infert[infert$education=="0-5yrs",]) * 100 / nrow(infert)
+prop2 <- nrow(infert[infert$education=="6-11yrs",]) * 100 / nrow(infert)
+prop3 <- nrow(infert[infert$education=="12+ yrs",]) * 100 / nrow(infert)
+
+
+amostra_infert <- strata(data = infert,
+                         stratanames = c("education"),
+                         size = c(prop1, prop2, prop3),
+                         method = "srswor")
+amostra_infert
+
+summary(amostra_infert)
+
+
+```
 
