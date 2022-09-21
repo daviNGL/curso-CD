@@ -1,0 +1,28 @@
+
+SEMENTE
+```{r}
+
+set.seed(123)
+
+```
+
+
+# GERA 1000 VARIAVEIS NORMALMENTE DISTRIBUIDAS
+```{r}
+
+x <- rnorm(n = 1000)
+
+hist(x)
+
+```
+
+
+# TESTE ATRAVES DE UM GRAFICO QQ
+```{r}
+
+qqnorm(x)
+qqline(y = x,
+       col = "red")
+
+```
+
