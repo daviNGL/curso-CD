@@ -1,0 +1,39 @@
+
+
+# INSTALACAO PACOTE NECESSARIO
+```{r}
+
+install.packages("TeachingSampling")
+
+library(TeachingSampling)
+
+```
+
+
+# AMOSTRA SISTEMATICA DE TAMANHO 150, 10 GRUPOS
+```{r}
+
+amostra <- S.SY(N = 150,
+                a = 10)
+
+amostra
+
+```
+
+
+# DIMENSOES DA AMOSTRA
+```{r}
+
+dim(amostra)
+
+```
+
+# EXTRAINDO UMA AMOSTRA SISTEMATICA DO CONJUNTO IRIS
+```{r}
+
+amostra_iris <- iris[amostra, ]
+
+amostra_iris
+
+```
+
