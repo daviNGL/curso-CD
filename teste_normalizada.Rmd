@@ -36,3 +36,20 @@ shapiro.test(x)
 
 ```
 
+# HISTOGRAMA COM LINHA DE DENSIDADE
+```{r}
+
+hist(x = x,
+     main = NA)
+
+par(new  = TRUE)
+
+plot(density(x = x),
+     col = "red",
+     xlab = NA,
+     ylab = NA,
+     axes = FALSE,
+     lwd = 2.5)     #grossura da linha
+
+```
+
