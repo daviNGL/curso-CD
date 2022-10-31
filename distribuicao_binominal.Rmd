@@ -1,0 +1,15 @@
+x = EVENTOS
+p = PROBABILIDADE
+s = SIZE
+
+SE JOGAR UMA MOEDA 5 VEZES, QUAL A CHANCE DE DAR CARA 3 VEZEZ?
+
+```{r}
+
+
+#OBS: dbinom ENCONTRA A CHANCE EXATA DE CAIR 3X, E NAO A ACUMULATIVA
+
+dbinom(x = 3, size = 5, prob = 0.5)
+
+```
+

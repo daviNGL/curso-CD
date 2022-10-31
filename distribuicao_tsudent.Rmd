@@ -1,0 +1,33 @@
+SALARIO MEDIO DE UM CIENTISTA DE DADOS EH 75 POR HORA.
+AMOSTRA = 9
+S (DESVIO PADRAO) = 10
+
+QUAL A PROBABILIDADE DE SER MENOR QUE 80/HORA?
+
+
+```{r}
+
+pt(1.5, 8)
+
+```
+
+QUAL A PROBABILIDADE DE SER MAIOR QUE 80?
+
+```{r}
+
+pt(1.5, 8, lower.tail = F)
+
+#OU
+
+1 - pt(1.5, 8)
+
+```
+
+
+Somando as duas probabilidades, deve dar 1
+```{r}
+
+pt(1.5, 8) + pt(1.5, 8, lower.tail = F)
+
+```
+
