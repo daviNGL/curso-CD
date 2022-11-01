@@ -1,0 +1,41 @@
+
+# DPOIS = PROBABILIDADE PONTUAL
+# PPOIS = CUMULATIVA
+
+
+
+O NUMERO DE ACIDENTES MEDIO POR DIA EH 2, QUAL A CHANCE DE OCORREREM 3 EM 1 DIA?
+```{r}
+
+#X = NUMERO DE EVENTOS QUE QUERO CALCULAR A PROB.
+#LAMBDA = NUMERO MEDIO QUE COSTUMA OCORRER
+
+dpois(x = 3, lambda = 2) * 100
+
+```
+
+QUAL A PROB. DE OCORREM 3 OU MENOS EM 1 DIA?
+```{r}
+
+ppois(q = 3, lambda = 2) * 100
+
+```
+
+QUAL A PROB. DE OCORREM MENOS DO QUE 3?
+```{r}
+
+ppois(q = 2, lambda = 2) * 100
+
+```
+
+QUAL A PROB. DE OCORREM MAIS DO QUE 3?
+```{r}
+
+(1-ppois(q = 3, lambda = 2))*100
+
+#OU
+
+ppois(q = 3, lambda = 2, lower.tail = F) * 100
+
+```
+
