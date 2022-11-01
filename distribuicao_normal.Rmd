@@ -34,3 +34,17 @@ hist(x = salarios_pad)
 
 ```
 
+# Exemplo: Suponha que a distribuição dos salários dos funcionários de uma empresa sigam uma distribuição
+#normal com média 𝜇=2.500 e desvio padrão σ= 170.
+# Ao selecionar aleatoriamente um indivíduo dessa população, qual a probabilidade de ter
+#salário acima de 2.600 
+
+
+```{r}
+
+z <- (2600-2500)/170
+
+pnorm(q = z, mean = 0, sd = 1, lower.tail = FALSE)
+
+```
+
