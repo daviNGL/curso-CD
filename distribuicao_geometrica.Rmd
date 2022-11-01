@@ -8,3 +8,24 @@ dgeom(x = 5, prob = 0.5) * 100
 
 ```
 
+# Podemos utilizar a mesma função para nos dar a probabilidade do sucesso ocorrer na primeira tentativa, segunda tentativa, terceira tentativa ... até a décima tentativa.
+
+```{r}
+
+dgeom(x = 1:10, prob = 0.5) * 100
+
+```
+
+# PROBABILIDADE DE SEREM NECESSARIAS 3 OU MENOS TENTATIVAS
+
+```{r}
+
+pgeom(q = 0:3, prob = 0.5) * 100
+
+plot(pgeom(q = 0:3, prob = 0.5))
+
+#Q = numero de falhas antes do sucesso ocorrer
+#prob = chance de sucesso
+
+```
+
