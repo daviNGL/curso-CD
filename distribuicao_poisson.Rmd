@@ -39,3 +39,23 @@ ppois(q = 3, lambda = 2, lower.tail = F) * 100
 
 ```
 
+
+
+
+
+
+```{r}
+
+dpois(x = 5, lambda = 6)
+
+aux <- dpois(x = 0, lambda = 6) + dpois(x = 1, lambda = 6) + dpois(x = 2, lambda = 6)
+
+ppois(q = 2, lambda = 6)
+
+
+1 - aux
+
+ppois(q = 2, lambda = 6, lower.tail = F)
+
+```
+
