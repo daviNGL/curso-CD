@@ -14,3 +14,23 @@ prob_intervalo <- 1 - (prob_ate_2400 + prob_maior_2600)
 
 ```
 
+
+# AMOSTRA DE 100 SALARIOS ALEATORIOS PARA UMA AMOSTRA NORMAL COM MEDIA 2500 E DESV. PAD = 170
+```{r}
+
+salarios <- rnorm(n = 100, mean = 2500, sd = 170)
+
+hist(x = salarios)
+
+```
+
+
+# PADRONIZANDO A DISTRIBUICAO NORMAL PARA DISTRIBUICAO NORMAL PADRAO
+```{r}
+
+salarios_pad <- scale(x = salarios) 
+
+hist(x = salarios_pad)
+
+```
+
