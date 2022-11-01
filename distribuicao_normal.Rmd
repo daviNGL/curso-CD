@@ -1,0 +1,16 @@
+#### DISTRIBUIÇÃO NORMAL ####
+
+# Exemplo: Suponha que a distribuição dos salários dos funcionários de uma empresa sigam uma distribuição normal com média 𝜇=2.500 e desvio padrão σ= 170.
+
+
+# Ao selecionar aleatoriamente um indivíduo dessa população, qual a probabilidade de ter salário entre 2.400 e 2.600?
+
+```{r}
+
+prob_ate_2400   <- pnorm(q = 2400, mean = 2500, sd = 170, lower.tail = TRUE)
+prob_maior_2600 <- pnorm(q = 2600, mean = 2500, sd = 170, lower.tail = FALSE)
+
+prob_intervalo <- 1 - (prob_ate_2400 + prob_maior_2600)
+
+```
+
