@@ -1,0 +1,13 @@
+#### DISTRIBUIÇÃO BINOMIAL NEGATIVA ####
+
+
+# Exemplo: Definindo como sucesso o cliente comprar, e supondo que a probabilidade de sucesso é 50%. 
+
+#Qual a probabilidade de ter que entrar 8 clientes até que a segunda venda ocorra?
+
+```{r}
+
+dnbinom(x = 2, size = 8, prob = 0.5)
+
+```
+
