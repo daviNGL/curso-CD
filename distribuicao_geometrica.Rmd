@@ -1,0 +1,10 @@
+#### DISTRIBUIÇÃO GEOMÉTRICA ####
+#Exemplo: Definindo como sucesso o cliente comprar, e supondo que a probabilidade de sucesso é 50%.
+#Qual a probabilidade da primeira venda ocorrer quando o quinto cliente entrar na loja
+
+```{r}
+
+dgeom(x = 5, prob = 0.5) * 100
+
+```
+
