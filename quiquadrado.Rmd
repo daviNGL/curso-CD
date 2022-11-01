@@ -1,0 +1,28 @@
+
+CRIANDO O CONJUNTO DE DADOS PARA O TESTE
+```{r}
+
+novela <- matrix(data = c(19,6,43,32), nrow = 2, byrow = TRUE)
+
+
+
+rownames(x = novela) <- c("masculino", "feminino")
+colnames(x = novela) <- c("assite", "nao_assiste")
+
+novela
+
+```
+
+#A DIFERENCA SIGNIFICATIVA ENTRE HOMENS E MULHERES QUE ASSISTEM E NAO ASSISTEM?
+
+
+EXECUTAR O QUIQUADRADO
+```{r}
+
+
+chisq.test(novela)$p.value
+
+#P-VALUE MUITO ALTO, NAO DA PRA REJEITAR A HIPOTESE NULA
+
+```
+
