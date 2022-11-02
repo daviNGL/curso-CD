@@ -1,0 +1,73 @@
+# CRIA UM DATA FRAME PRO TESTE (CONTEM DADOS HISTORICO DE VENDAS DO CAFE)
+
+```{r}
+dados <- data.frame(
+  
+  Vendas_Cafe = c(18, 20, 23, 23, 23, 23, 24, 25, 26, 26, 26, 26, 27, 28, 28, 
+                  29, 29, 30, 30, 31, 31, 33, 34, 35, 38, 39, 41, 44, 44, 46),
+  
+  Preco_Cafe  = c(4.77, 4.67, 4.75, 4.74, 4.63, 4.56, 4.59, 4.75, 4.75, 4.49, 
+                  4.41, 4.32, 4.68, 4.66, 4.42, 4.71, 4.66, 4.46, 4.36, 4.47, 
+                  4.43, 4.4, 4.61, 4.09, 3.73, 3.89, 4.35, 3.84, 3.81, 3.79),
+  
+  Promocao    = c("Nao", "Nao", "Nao", "Nao", "Nao", "Nao", "Nao", "Nao", "Sim", 
+                  "Nao", "Sim", "Nao", "Nao", "Sim", "Sim", "Nao", "Sim", "Sim", 
+                  "Sim", "Nao", "Nao", "Sim", "Sim", "Sim", "Nao", "Sim", "Sim", 
+                  "Sim", "Sim", "Sim"),
+  
+  Preco_Leite = c(4.74, 4.81, 4.36, 4.29, 4.17, 4.66, 4.73, 4.11, 4.21, 4.25, 
+                  4.62, 4.53, 4.44, 4.19, 4.37, 4.29, 4.57, 4.21, 4.77, 4, 4.31, 
+                  4.34, 4.05, 4.73, 4.07, 4.75, 4, 4.15, 4.34, 4.15) 
+  )
+
+```
+
+
+
+# HISTOGRAMA DO PRECO DO CAFE
+```{r}
+
+summary(object = dados$Preco_Cafe)
+
+boxplot(x = dados$Preco_Cafe)
+
+hist(x = dados$Preco_Cafe)
+
+```
+
+
+# APLICA TEOREMA CENTRAL DO LIMITE
+```{r}
+
+tot_sub_amostras <- 50000
+
+i <- 0
+medias <- 0
+
+for(i in i:tot_sub_amostras){
+  
+  sub_amostra <- sample(x = dados$Preco_Cafe, size = 10, replace = T)
+  
+  medias[i] <- mean(x = sub_amostra)
+  
+}
+
+hist(x = medias, breaks = 100)
+
+```
+
+# ENCONTRA OS INTERVALOS DE CONFIANCA
+
+```{r}
+
+
+# PARA UM NIVEL DE CONFIANCA DE 95%:
+quantile(x = medias, probs = c(0.025, 1-0.025))
+
+
+# PARA UM NIVEL DE CONFIANCA DE 90%
+quantile(x = medias, probs = c(0.05, 0.95))
+
+
+```
+
