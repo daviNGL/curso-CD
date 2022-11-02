@@ -31,3 +31,30 @@ pt(1.5, 8) + pt(1.5, 8, lower.tail = F)
 
 ```
 
+# UM ESTUDO AFIRMA QUE EM MEDIA, CRIANCAS DE 6 ANOS PESAM 22KG.
+
+# APLICAR DISTRIBUICAO T STUDENT PARA VER SE EH POSSIVEL PROVAR, A PARTIR DE UMA AMOSTRA DE 100 CRIANCAS, A MEDIA DE PESO EH 23.
+# DESVIO PADRAO AMOSTRA = 4.
+
+```{r}
+
+media_populacao <- 22
+
+media_amostra <- 23
+desv_pad_amostra <- 4
+n <- 100
+
+
+t_valor <- (media_amostra - media_populacao) / (desv_pad_amostra / sqrt(n))
+
+t_valor
+
+
+pt(q = t_valor, df = n, lower.tail = F)
+
+pt(q = 1.660, df = n, lower.tail = F)
+
+
+```
+
+

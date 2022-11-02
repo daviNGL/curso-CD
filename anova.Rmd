@@ -55,3 +55,18 @@ tukey
 
 ```
 
+```{r}
+
+pnorm(q = -1.96)
+pnorm(q = -0.86)
+
+pnorm(q = +1.96)
+pnorm(q = +0.86)
+
+
+p_valor <- ( pnorm(q = +0.86) - pnorm(q = -0.86) ) - ( pnorm(q = -1.96) * 2 )
+
+p_valor
+
+
+```
