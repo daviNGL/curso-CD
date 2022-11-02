@@ -1,0 +1,92 @@
+#Intervalo de Confiança #######
+
+##Intervalo de confiança para média amostral pela distribuição Normal Padrão
+
+# Obter o intervalo de confiança para uma variável cuja média = 30, desvio padrão = 7,31 e n = 30
+
+
+```{r}
+
+nivel_confianca <- 0.95
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+
+
+#CRIO UMA VAIAVEL COM NUMEROS ALEATORIO DE 1 A 50.000 
+
+populacao <- sample(x = c(1:5000), replace = T)
+
+# PEGO A MEDIA DELA
+
+mean(populacao)
+
+
+```
+
+# PEGO UMA SUBAMOSTRA DE X E CALCULO A MEDIA
+
+```{r}
+
+amostra <- sample(x = populacao, size = 500, replace = FALSE)
+
+mean(amostra)
+
+```
+
+# APLICO TEOREMA DO CENTRAL LIMITE PRA VER O INTERVALO DE CONFIANCA DA MINHA AMOSTRA
+```{r}
+
+tot_sub_amostras <- 10000
+medias <- c()
+i <- 0
+
+for(i in 1:tot_sub_amostras){
+  
+  sub_amostra <- sample(x = amostra, size = 10, replace = TRUE)
+  
+  medias[i] <- mean(sub_amostra)
+  
+}
+
+
+nivel_confianca <- 0.95
+limite_inferior <- (1 - nivel_confianca) / 2
+limite_superior <- 1 - limite_inferior
+
+quantile(x = medias, probs = c(limite_inferior, limite_superior))
+
+
+intervalo_conf <- t.test(x = medias, conf.level = 0.95)
+
+intervalo_conf$int
+
+```
+

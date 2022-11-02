@@ -5,9 +5,53 @@
 
 library(readr)
 
-anova <- read_delim("D:/Documentos/Cursos/FormacaoCD/anova.csv", 
+df_remedios <- read_delim("D:/Documentos/Cursos/FormacaoCD/anova.csv", 
     delim = ";", escape_double = FALSE, trim_ws = TRUE)
+```
 
-anova
+# VISUALIZACAO DAS DISTROBUICOES DOS REMEDIOS POR HORAS
+
+```{r}
+
+boxplot(df_remedios$Horas ~ df_remedios$Remedio, 
+        xlab = "Remédio", 
+        ylab = "Horas para o efeito", 
+        main = "Tempo de ação dos remédios A x B x C")
+
+```
+
+
+# EXECUTAR ANALISE DE VARIANCIA (DAS HORAS CONFORME O REMEDIO)
+
+```{r}
+
+#ANALISE DE VARIANCIA DAS HORAS (~ = CONFORME) O REMEDIO
+
+an <- aov(df_remedios$Horas ~ df_remedios$Remedio, data = df_remedios)
+
+summary(an)
+
+# HIPOTESE NULA: NAO HA DIFERENCA SIGNIFICATIVA
+
+# Pr(>F) = 0.592, PORTANTO NAO SE REJEITA A HIP. NULA
+
+```
+
+# EXECUTAR ANALISE DE VARIANCIA (DAS HORAS CONFORME O REMEDIO E O SEXO)
+```{r}
+
+an <- aov(data = df_remedios, df_remedios$Horas ~ df_remedios$Remedio * df_remedios$Sexo)
+
+summary(an)
+
+```
+
+# SE HOUVER DIFERENCA, O TESTE DE TUKEY EH EXECUTADO PRA VER ENTRE QUAIS HA ESSA DIFERENCA
+```{r}
+
+tukey <- TukeyHSD(x = an)
+
+tukey
+
 ```
 
