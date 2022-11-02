@@ -50,10 +50,67 @@ t_valor <- (media_amostra - media_populacao) / (desv_pad_amostra / sqrt(n))
 t_valor
 
 
+# VERIFICO A CHANCE DE ESTAR ACIMA DO T_VALOR, ISTO EH, A AREA APOS ESSE VALOR NA DISTRIBUICAO NORMAL T STUDENT
 pt(q = t_valor, df = n, lower.tail = F)
+
+# ESTE VALOR DA AREA APOS T_VALOR, EH A CHANCE DE EU ESTAR ERRADO. 
+#COMO DEU UM VALOR ABAIXO DE ALFA, POSSO REJEITAR A HIP NULA.
+# POR QUE A CHANCE DA MEDIA SER 23KG VAI SER TODA A AREA ANTES DO T_VALOR!!!!!!!
 
 pt(q = 1.660, df = n, lower.tail = F)
 
+
+```
+
+
+# UM ESTUDO AFIRMA QUE EM MEDIA 75% DOS ELEITORES VOTAM EM MARIA.
+
+# APLICAR DIST. T STUDENT PARA TENTAR PROVAR QUE ESSA % EH MENOR QUE 75%.
+
+# DADOS DO ESTUDO: n = 100, p = 77%, significancia = 5%
+
+
+
+```{r}
+
+
+prop_populacao <- 0.75
+
+prop_amostra <- 0.77
+tot_amostra <- 100
+nivel_significancia <- 0.05
+
+
+p_value <- (prop_amostra - prop_populacao) / sqrt(prop_populacao * (1-prop_populacao) / tot_amostra)
+
+
+pnorm(q = p_value, lower.tail = F)
+
+```
+
+
+
+
+```{r}
+
+
+media_pop <- 140
+desv_pop <- 27
+
+media_amost <- 134
+
+
+p_valor <- (media_amost - media_pop) / (desv_pop / sqrt(15))
+
+#p_valor
+
+
+alfa <- 0.05
+
+
+(alfa/2) * 100
+pnorm(q = p_valor) * 100
+(1-(alfa/2)) * 100
 
 ```
 
