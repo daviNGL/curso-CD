@@ -1,0 +1,43 @@
+# TESTE DE HIPOTESE #
+
+
+
+
+##### ======== AVALIANDO A NORMALIDADE DE UMA VARIAVEL ALEATORI ======= #####
+
+#GERANDO VARIVEIS PARA O TESTE
+```{r}
+
+# GERA VARIAVEL ALEATORIA QUE SEGUE DIST. NORMAL, COM 70 OBSERVACOES, MEDIA 70 E DESV PADRAO 8
+var_normal <- rnorm(n = 70, mean = 25, sd = 8)
+
+# GERA VARIAVEL ALEATORIA F (NAO SEGUE DIST. NORMAL) COM 15 OBSERVACOES, 2 GRAUS DE LIBERDADE NO NUMERADOR E 10 NO DENOMINADOR 
+var_n_normal <- rf(n = 15, df1 = 2, df2 = 10)
+
+```
+
+
+
+# VERIFICANDO SE A VARIAVEL SEGUE DISTRIBUICAO NORMAL
+```{r}
+
+
+# HISTOGRAMA (O FORMATO DA VAR N NORMAL EH BICAUDAL)
+hist(x = var_normal)
+hist(x = var_n_normal)
+
+
+# QQPLOT (OS PONTOS DA VAR N NORMAL NAO SEGUEM A RETA)
+qqnorm(y = var_normal)
+qqline(y = var_normal)
+
+qqnorm(y = var_n_normal)
+qqline(y = var_n_normal)
+
+
+# TESTE DE SHAPIRO-WILK (P-VALUE DA VAR N NORMAL < 5%, LOGO REJEITA H0=VAR NORMAL  )
+shapiro.test(x = var_normal)
+shapiro.test(x = var_n_normal)
+
+```
+
