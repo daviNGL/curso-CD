@@ -71,12 +71,54 @@ vendas_b <- rnorm(n = nb, mean = media_b, sd = sd_b)
 # CALCULA O T-VALOR
 t.test(x = vendas_a,
        y = vendas_b,
-       alternative = "two.sided")$p.value
+       paired = FALSE,
+       alternative = "two.sided",
+       conf.level = 0.95)$p.value
 
 
+#alternative = SE EH BICAUDAL OU UNICAUDAL
+#LESS, two.sided, GREATER
 
 ```
 
 
+
+## ==== TESTE T PARA DIFERENCA DE DUAS MEDIAS (VARIAVEIS DEPENDENTES) === ##
+
+# H0 : O PESO MÉDIO APÓS A DIÉTA É IGUAL ANTES DA DIÉTA.
+# H1 : O PESO MÉDIO APÓS A DIETA É MENOS QUE ANTES DA DIÉTA.
+
+```{r}
+
+# BIBLIOTECA PARA GERAR VALORES ALEATORIOS QUE SIGAM UM INTERVALO DE x A y
+
+#install.packages("truncnorm")
+library(truncnorm)
+
+antes_dieta <- rtruncnorm(n = 20, a = 100, b = 140, mean = 123, sd = 18)
+depois_dieta <- rtruncnorm(n = 20, a = 110, b = 130, mean = 110, sd = 28)
+
+
+# PEGAR A DIFERENCA DE PESO DE CADA OBSERVACAO
+diferenca <- antes_dieta - depois_dieta
+
+
+# AVALIA A NORMALIDADE DA VARIAVEL COM AS DIFERENCAS
+shapiro.test(x = diferenca)
+
+
+# APLICA O TESTE T
+t.test(x = depois_dieta, 
+       y = antes_dieta, 
+       paired = TRUE,
+       alternative = "less",
+       conf.level = 0.9)
+
+
+#P VALOR MAIOR QUE ALFA, NAO PODEMOS REJEITAR H0, LOGO A DIETA NAO EH ESTATISTICAMENTE VALIDA#
+
+
+
+```
 
 
