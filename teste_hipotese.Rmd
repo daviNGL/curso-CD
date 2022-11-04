@@ -41,3 +41,42 @@ shapiro.test(x = var_n_normal)
 
 ```
 
+
+
+
+## ==== TESTE T PARA DIFERENCA DE DUAS MEDIAS (VARIAVEIS INDEPENDENTES) === ##
+
+# H0 : AS VENDAS DE UM PRODUTO NA POSICAO A, SAO IGUAIS NA POSICAO B.
+# H1 : AS VENDAS SAO DIFERENTES NAS POSICOES A e B
+
+
+```{r}
+
+options(scipen = 666)
+
+na <- 25
+nb <- 30
+
+media_a <- 150.1
+media_b <- 182.1
+
+sd_a <- 17
+sd_b <- 19.2
+
+
+vendas_a <- rnorm(n = na, mean = media_a, sd = sd_a)
+vendas_b <- rnorm(n = nb, mean = media_b, sd = sd_b)
+
+
+# CALCULA O T-VALOR
+t.test(x = vendas_a,
+       y = vendas_b,
+       alternative = "two.sided")$p.value
+
+
+
+```
+
+
+
+
