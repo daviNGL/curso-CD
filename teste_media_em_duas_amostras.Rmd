@@ -1,0 +1,36 @@
+# H0: QUANDO UM PRODUTO ESTA NA POSICAO B, SEU FATURAMENTO EH IGUAL NA POSICAO A.
+# H1: QUANDO UM PRODUTO ESTA NA POSICAO B, SEU FATURAMENTO EH DIFERENTE NA POSICAO A.
+
+
+# DADOS:
+
+#     POSICAO A: n=25, media=150.10, sd = 17
+#     POSICAO A: n=30, media=182.10, sd = 19.2
+
+
+```{r}
+
+tot_a <- 25
+tot_b <- 30
+
+media_a <- 150.1
+media_b <- 182.1
+
+sd_a <- 17
+sd_b <- 19.2
+
+
+# CALCULO DO T
+
+t_valor <- (media_a - media_b) / (sqrt( (sd_a^2/tot_a) + (sd_b^2/tot_b) ))
+
+
+aux <- pt(q = t_valor, df = 52) * 2
+
+aux < pt(q = 0.025, df = 52) * 2
+
+
+
+
+```
+
