@@ -122,3 +122,43 @@ t.test(x = depois_dieta,
 ```
 
 
+
+## ==== TESTE QUIQUADRADO PRA ASSOCIACAO DE VARIAVEIS CATEGORICAS === ##
+
+# H0 : O CLIENTE ESTAR ACOMPANHADO OU NAO DE CRIANCA, NAO INFLUENCIA SE VAI COMPRAR
+# H1 : O CLIENTE ESTAR ACOMPANHADO OU NAO DE CRIANCA, INFLUENCIA SE VAI COMPRAR
+
+
+
+```{r}
+
+# DATA FRAME COM O CONJUNTO DE DADOS:
+
+dados <- data.frame(
+ 
+ Cliente = c("Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto", "Adulto", "Adulto", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto", "Adulto", "Adulto", "Adulto", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto", "Adulto_com_Crianca", "Adulto", "Adulto", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto_com_Crianca", "Adulto", "Adulto_com_Crianca", "Adulto", "Adulto", "Adulto", "Adulto","Adulto","Adulto","Adulto","Adulto","Adulto"),
+ Comprou = c("Não_Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou", "Comprou", "Não_Comprou", "Comprou", "Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou", "Comprou", "Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou", "Não_Comprou", "Comprou","Comprou","Comprou","Comprou","Comprou","Comprou")
+ 
+)
+
+
+dados$Cliente <- as.factor(dados$Cliente)
+dados$Comprou <- as.factor(dados$Comprou)
+
+
+# GERA A TABELA DE CONTINGENCIA
+tabela <- table(dados$Cliente, dados$Comprou)
+
+# APLICA O TESTE QUIQUADRADO
+teste_qui <- chisq.test(x = tabela, correct = F)
+
+teste_qui$observed
+teste_qui$expected
+
+teste_qui$p.value
+
+#P-VALOR MUITO BAIXO, MESMO CON 99% DE NIVEL DE CONFIANCA AINDA PODERIA REJEITAR H0
+
+```
+
+
