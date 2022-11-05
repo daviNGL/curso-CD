@@ -38,4 +38,18 @@ modelo
 
 ```
 
+# VISUALIZACAO DA RELACAO ENTRE AS VARIAVEIS E A LINHA DE MELHOR AJUSTE
+```{r}
+
+plot(cars$speed ~ cars$dist,
+     data = cars,
+     xlab = "Distancia",
+     ylab = "Velocidade",
+     main = "Carros")
+
+abline(modelo, col = "red")
+
+?abline
+
+```
 
