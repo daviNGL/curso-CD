@@ -62,3 +62,18 @@ predict(object = modelo,
 
 ```
 
+
+# ANALISANDO MELHOR O MODELO
+```{r}
+
+summary(modelo)
+
+modelo$coefficients
+
+shapiro.test(modelo$residuals)
+
+hist(modelo$residuals)
+
+```
+
+
