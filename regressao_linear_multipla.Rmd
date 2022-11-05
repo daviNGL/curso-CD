@@ -92,6 +92,30 @@ x$adj.r.squared
 predict(object = modelo,
         newdata = data.frame(c=("disp" = 200)))
 
+predict(object = modelo,
+        newdata = data.frame(disp = 200))
+
 ```
 
 
+# Adicionando mais duas variaveis independentes no modelo
+```{r}
+
+modelo <- lm(data = mtcars,
+             formula = mpg ~ disp + hp + cyl)
+
+summary(modelo)
+
+```
+
+
+
+# Prevendo consumo com 200 cilindradas, 100 hp e 4 cilindros
+```{r}
+
+
+
+predict(object = modelo,
+        newdata = data.frame(disp = 200, hp = 100, cyl = 4))
+
+```
