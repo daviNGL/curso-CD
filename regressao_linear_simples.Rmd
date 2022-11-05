@@ -53,3 +53,12 @@ abline(modelo, col = "red")
 
 ```
 
+
+# PREVISAO USANDO O MODELO CRIADO
+```{r}
+
+predict(object = modelo,
+        newdata = data.frame(dist = 22))
+
+```
+
