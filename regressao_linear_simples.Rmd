@@ -1,0 +1,29 @@
+
+# DATAFRAME CARS: MOSTRA VELOCIDADE E TEMPO DE PARAGEM DOS CARROS
+```{r}
+
+#install.packages("corrgram")
+library(corrgram)
+
+cars
+
+```
+
+
+# CALCULO CORRELACAO ENTRE AS VARIAVEIS VELOCIDADE X TEMPO PARAGEM
+```{r}
+
+cor(x= cars)
+
+corrgram(x = cars,
+         order = T,
+         lower.panel = panel.shade,
+         upper.panel = panel.pie,
+         text.panel = panel.txt,
+         main = "Carros")
+
+```
+
+
+
+
