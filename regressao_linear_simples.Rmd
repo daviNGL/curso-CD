@@ -66,6 +66,8 @@ predict(object = modelo,
 # ANALISANDO MELHOR O MODELO
 ```{r}
 
+options(scipen=666)
+
 summary(modelo)
 
 modelo$coefficients
