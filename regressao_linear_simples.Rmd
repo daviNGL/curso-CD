@@ -25,5 +25,17 @@ corrgram(x = cars,
 ```
 
 
+# CRIACAO DO MODELO USANDO A FUNCAO lm()
+
+```{r}
+
+# MODELO PRA PREVER VELOCIDADE EM FUNCAO / A PARTIR DA DISTANCIA
+
+modelo <- lm(data = cars,
+             modelo = cars$speed ~ cars$dist)
+
+modelo
+
+```
 
 
