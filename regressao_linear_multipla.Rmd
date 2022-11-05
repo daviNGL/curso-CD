@@ -1,0 +1,97 @@
+
+
+# MPG : CONSUMO
+# HP  : CAVALOS
+# CYL : NUM CILINDROS
+# DISP: CILINDRADAS
+
+# Carregar a biblioteca com o data frame
+
+```{r}
+
+library(corrgram)
+
+mtcars
+
+dim(mtcars)
+
+```
+
+# Avaliando a correlacao das variaveis
+
+```{r}
+
+cor(mtcars[1:4])
+
+
+corrgram(x = mtcars[1:4],
+         order = T,
+         lower.panel = panel.shade,
+         upper.panel = panel.pie,
+         text.panel = panel.txt,
+         main = "Carros")
+
+```
+
+
+# Grafico de dispersao Cilindradas X Consumo
+```{r}
+
+plot(mtcars$disp ~ mtcars$mpg,
+     main = "Carros",
+     xlab = "Consumo",
+     ylab = "Cilindradas")
+
+```
+
+
+# Modelo pra prever consumo a partir das cilindradas
+
+```{r}
+
+modelo <- lm(formula = mpg ~ disp,
+             data = mtcars)
+
+summary(modelo)
+
+```
+
+
+# VISUALIZA A RELACAO COM A LINHA DE MELHOR AJUSTE
+
+```{r}
+
+plot(mtcars$mpg ~ mtcars$disp,
+     data = mtcars,
+     main = "Carros",
+     xlab = "Cilindradas",
+     ylab = "Consumo")
+
+abline(modelo, col = "red")
+
+
+```
+
+
+
+
+# Coeficiente de determinacao
+```{r}
+
+x <- summary(modelo)
+
+x$r.squared
+x$adj.r.squared
+
+```
+
+
+# Prevendo o consumo de 200 cilindradas
+```{r}
+
+predict(object = modelo,
+        newdata = data.frame(c=("disp" = 200)))
+
+```
+
+

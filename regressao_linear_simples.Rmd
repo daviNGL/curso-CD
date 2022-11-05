@@ -32,7 +32,7 @@ corrgram(x = cars,
 # MODELO PRA PREVER VELOCIDADE EM FUNCAO / A PARTIR DA DISTANCIA
 
 modelo <- lm(data = cars,
-             modelo = cars$speed ~ cars$dist)
+             formula = cars$speed ~ cars$dist)
 
 modelo
 
@@ -75,6 +75,12 @@ modelo$coefficients
 shapiro.test(modelo$residuals)
 
 hist(modelo$residuals)
+
+
+qqnorm(modelo$residuals)
+qqline(modelo$residuals, col = "red")
+
+
 
 ```
 
