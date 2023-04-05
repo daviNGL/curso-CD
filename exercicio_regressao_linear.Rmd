@@ -1,0 +1,55 @@
+
+# Impostacao data frame
+```{r}
+
+library(readr)
+
+df_franquias <- read_delim("D:/Documentos/Cursos/FormacaoCD/slr12.csv", 
+    delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+head(df_franquias)
+
+
+
+```
+
+# Analise exploratoria dos dados
+```{r}
+
+summary(object = df_franquias)
+
+# CUSTO INICIAL
+boxplot(df_franquias$CusInic)
+
+# VALOR PAGO ANUAL
+boxplot(df_franquias$FrqAnual)
+
+plot(x = df_franquias$FrqAnual,
+     y = df_franquias$CusInic,
+     xlab = "Franquia anual (R$)",
+     ylab = "Investimento inicial (R$)")
+
+
+# OBS: PROVAVEIS OUTLIERS NO CUSTO INICIAL QUE IRAO PREJUDICAR O MODELO
+
+
+# CORRELACAO SEM REMOVER OUTLIERS EH FRACA POSITIVA
+cor(df_franquias)
+
+
+```
+
+
+# Cricacao do modelo
+```{r}
+
+modelo <- lm(data = df_franquias,
+             formula = df_franquias$CusInic ~ df_franquias$FrqAnual)
+
+modelo
+
+summary(modelo)
+
+```
+
+
